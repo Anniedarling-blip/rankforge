@@ -155,20 +155,150 @@ Simulates publishing for:
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
+This project follows a clean and modular folder architecture to keep the codebase scalable, maintainable, and easy to understand.
+
+## Directory Layout
+
+```bash
 src/
 ├── app/
 ├── components/
-│ ├── results/
-│ ├── ui/
-│ ├── forms/
-│ ├── pipeline/
-│ └── layout/
+│   ├── results/
+│   ├── ui/
+│   ├── forms/
+│   ├── pipeline/
+│   └── layout/
 ├── lib/
 ├── types/
 └── data/
+```
 
+---
+
+## 📂 Folder Explanation
+
+### `src/app/`
+Contains the main application pages, routing logic, and app-level configurations.
+
+**Examples:**
+- Page files
+- Route handlers
+- Layout setup
+- App entry points
+
+---
+
+### `src/components/`
+Stores all reusable React/Next.js components used across the application.
+
+#### `src/components/results/`
+Contains components used to display generated or processed results.
+
+**Examples:**
+- Output cards
+- SEO score display
+- Blog preview section
+- Keyword insights panel
+
+#### `src/components/ui/`
+Holds general-purpose UI components used throughout the app.
+
+**Examples:**
+- Buttons
+- Cards
+- Inputs
+- Dialogs
+- Tabs
+- Badges
+
+#### `src/components/forms/`
+Contains form-related components for collecting user input.
+
+**Examples:**
+- Keyword input form
+- Product input form
+- Audience selector
+- Validation logic UI
+
+#### `src/components/pipeline/`
+Includes components related to the internal workflow or processing pipeline of the app.
+
+**Examples:**
+- Step indicators
+- Loading states
+- Processing stages
+- Workflow visualizers
+
+#### `src/components/layout/`
+Contains shared layout components for consistent app structure.
+
+**Examples:**
+- Navbar
+- Sidebar
+- Footer
+- Page wrappers
+- Section containers
+
+---
+
+### `src/lib/`
+Contains utility functions, helper methods, reusable logic, and service-level functions.
+
+**Examples:**
+- API helper functions
+- Data transformers
+- Prompt builders
+- Formatter utilities
+- Shared business logic
+
+---
+
+### `src/types/`
+Stores all TypeScript type definitions and interfaces used across the project.
+
+**Examples:**
+- Form input types
+- API response types
+- Component prop interfaces
+- Result object structures
+
+---
+
+### `src/data/`
+Contains static data, constants, templates, and mock/demo data used in the project.
+
+**Examples:**
+- Demo input data
+- Predefined templates
+- Sample outputs
+- Constants and labels
+
+---
+
+## ✅ Why This Structure?
+
+This folder structure helps:
+
+- Keep the codebase organized
+- Improve reusability of components
+- Separate UI from logic
+- Make debugging easier
+- Support future scalability
+
+---
+
+## 🚀 Development Benefit
+
+With this structure, developers can quickly:
+
+- Find files faster
+- Reuse modules efficiently
+- Maintain cleaner code
+- Add new features without chaos
+
+---
 
 
 ---
