@@ -186,37 +186,40 @@ http://localhost:3000
 
 🎯 Demo Input (Recommended)
 
-Use this for best results:
+-Use this for best results:
 
-Keyword: best AI blog writing tool
-Audience: content marketers, startups
-Product: AI blog automation SaaS
-Goal: increase organic traffic
-Tone: professional
-Platform: blog
-Business Type: SaaS
+-Keyword: best AI blog writing tool
+-Audience: content marketers, startups
+-Product: AI blog automation SaaS
+-Goal: increase organic traffic
+-Tone: professional
+-Platform: blog
+-Business Type: SaaS
 
 💡 Use Cases
-SaaS companies
-Ecommerce brands
-Personal brands
-SEO teams
-Content marketers
-Agencies
+
+-SaaS companies
+-Ecommerce brands
+-Personal brands
+-SEO teams
+-Content marketers
+-Agencies
 
 🏆 What Makes RankForge Different
-Strategy-first approach
-Explainable AI (Decision Trace)
-Dynamic outputs (not static templates)
-Integrated validation system
-Platform-ready content generation
+
+-Strategy-first approach
+-Explainable AI (Decision Trace)
+-Dynamic outputs (not static templates)
+-Integrated validation system
+-Platform-ready content generation
 
 🚀 Future Improvements
-Real SERP API integration
-Competitor URL analysis
-Auto publishing integrations
-Advanced analytics feedback loop
-Internal linking automation
+
+-Real SERP API integration
+-Competitor URL analysis
+-Auto publishing integrations
+-Advanced analytics feedback loop
+-Internal linking automation
 
 📌 Product Positioning
 
@@ -224,10 +227,10 @@ RankForge is not just an AI writing tool.
 
 It is an AI-powered system that:
 
-generates strategy
-validates content
-predicts performance
-adapts to platforms
+-generates strategy
+-validates content
+-predicts performance
+-adapts to platforms
 
 📜 License
 
