@@ -180,83 +180,108 @@ npm install
 
 ---
 
-Run the app
+▶️ Run the App
 npm run dev
 
 ---
 
-
-Open in browser
+🌐 Open in Browser
 http://localhost:3000
+---
+
+### ▶️ Run the App
+
+---
+npm run dev
+---
+
+### 🌐 Open in Browser
+
+---
+http://localhost:3000
+---
 
 ---
 
+## 🎯 Demo Input (Recommended)
 
-🎯 Demo Input (Recommended)
+Use this configuration for best results:
 
--Use this for best results:
-
--Keyword: best AI blog writing tool
--Audience: content marketers, startups
--Product: AI blog automation SaaS
--Goal: increase organic traffic
--Tone: professional
--Platform: blog
--Business Type: SaaS
-
----
-
-💡 Use Cases
-
--SaaS companies
--Ecommerce brands
--Personal brands
--SEO teams
--Content marketers
--Agencies
+| Field | Value |
+|-------|-------|
+| Keyword | best AI blog writing tool |
+| Audience | content marketers, startups |
+| Product | AI blog automation SaaS |
+| Goal | increase organic traffic |
+| Tone | professional |
+| Platform | blog |
+| Business Type | SaaS |
 
 ---
 
-🏆 What Makes RankForge Different
+## 💡 Use Cases
 
--Strategy-first approach
--Explainable AI (Decision Trace)
--Dynamic outputs (not static templates)
--Integrated validation system
--Platform-ready content generation
-
----
-
-
-🚀 Future Improvements
-
--Real SERP API integration
--Competitor URL analysis
--Auto publishing integrations
--Advanced analytics feedback loop
--Internal linking automation
+- SaaS companies  
+- Ecommerce brands  
+- Personal brands  
+- SEO teams  
+- Content marketers  
+- Agencies  
 
 ---
 
+## 🏆 Why RankForge?
 
-📌 Product Positioning
-
-RankForge is not just an AI writing tool.
-
-It is an AI-powered system that:
-
--generates strategy
--validates content
--predicts performance
--adapts to platforms
+| Traditional AI Tools ❌ | RankForge ✅ |
+|------------------------|-------------|
+| Generic outputs | Strategy-driven outputs |
+| No reasoning | Explainable AI |
+| Static templates | Dynamic generation |
+| No validation | Built-in validation |
+| Platform-agnostic | Platform-aware |
 
 ---
 
+## 🧱 Architecture (High-Level)
 
-📜 License
-
-This project is intended for academic and demonstration purposes.
-
+---
+User Input
+   ↓
+Strategy Engine
+   ↓
+Content Generator
+   ↓
+Validation Layer
+   ↓
+Performance Prediction
+   ↓
+Final Output (Platform-Ready)
 
 ---
 
+## 🚀 Future Improvements
+
+- 🔗 Real SERP API integration  
+- 🧠 Competitor URL analysis  
+- 📤 Auto publishing integrations  
+- 📊 Analytics feedback loop  
+- 🔄 Internal linking automation  
+
+---
+
+## 📌 Product Positioning
+
+> RankForge is an **AI-powered growth engine**, not just a writing tool.
+
+It helps you:
+- Think strategically  
+- Execute faster  
+- Rank smarter  
+
+---
+
+## 📜 License
+
+This project is intended for **academic and demonstration purposes only**.
+
+---
