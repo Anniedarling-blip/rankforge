@@ -176,13 +176,14 @@ src/
 ## ▶️ Getting Started
 
 ### Install dependencies
-```bash
-npm install
+npm install 
 
 Run the app
 npm run dev
+
 Open in browser
 http://localhost:3000
+
 🎯 Demo Input (Recommended)
 
 Use this for best results:
@@ -194,6 +195,7 @@ Goal: increase organic traffic
 Tone: professional
 Platform: blog
 Business Type: SaaS
+
 💡 Use Cases
 SaaS companies
 Ecommerce brands
@@ -201,18 +203,21 @@ Personal brands
 SEO teams
 Content marketers
 Agencies
+
 🏆 What Makes RankForge Different
 Strategy-first approach
 Explainable AI (Decision Trace)
 Dynamic outputs (not static templates)
 Integrated validation system
 Platform-ready content generation
+
 🚀 Future Improvements
 Real SERP API integration
 Competitor URL analysis
 Auto publishing integrations
 Advanced analytics feedback loop
 Internal linking automation
+
 📌 Product Positioning
 
 RankForge is not just an AI writing tool.
@@ -223,6 +228,7 @@ generates strategy
 validates content
 predicts performance
 adapts to platforms
+
 📜 License
 
 This project is intended for academic and demonstration purposes.
@@ -230,13 +236,3 @@ This project is intended for academic and demonstration purposes.
 
 ---
 
-✅ This version is:
-- GitHub clean  
-- properly formatted  
-- no broken markdown  
-- ready for submission  
-
----
-
-If you want next:
-👉 I can upgrade this into a **top 1% README (with badges, demo GIF, screenshots)** which impresses judges instantly.
