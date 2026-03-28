@@ -178,11 +178,19 @@ src/
 ### Install dependencies
 npm install 
 
+---
+
 Run the app
 npm run dev
 
+---
+
+
 Open in browser
 http://localhost:3000
+
+---
+
 
 🎯 Demo Input (Recommended)
 
@@ -196,6 +204,8 @@ http://localhost:3000
 -Platform: blog
 -Business Type: SaaS
 
+---
+
 💡 Use Cases
 
 -SaaS companies
@@ -205,6 +215,8 @@ http://localhost:3000
 -Content marketers
 -Agencies
 
+---
+
 🏆 What Makes RankForge Different
 
 -Strategy-first approach
@@ -213,6 +225,9 @@ http://localhost:3000
 -Integrated validation system
 -Platform-ready content generation
 
+---
+
+
 🚀 Future Improvements
 
 -Real SERP API integration
@@ -220,6 +235,9 @@ http://localhost:3000
 -Auto publishing integrations
 -Advanced analytics feedback loop
 -Internal linking automation
+
+---
+
 
 📌 Product Positioning
 
@@ -231,6 +249,9 @@ It is an AI-powered system that:
 -validates content
 -predicts performance
 -adapts to platforms
+
+---
+
 
 📜 License
 
