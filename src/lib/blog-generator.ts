@@ -12,6 +12,11 @@ interface BlogTemplateInput {
   countryNote?: string;
 }
 
+interface BlogSection {
+  heading: string;
+  content: string;
+}
+
 function getSafePlatformLabel(platform?: string): string {
   const clean = (platform ?? "").trim();
   return clean.length > 0 ? clean : "Blog / Website";
@@ -22,13 +27,13 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
   metaTitle: string;
   metaDescription: string;
 } {
-  const h2s = input.blueprint.outline.h2;
+  const h2s = input.blueprint?.outline?.h2 ?? [];
   const safePlatform = getSafePlatformLabel(input.platform);
 
   const metaTitle = `${input.title} | SEO-Optimized Guide`;
   const metaDescription = `Discover ${input.primaryKeyword} with a ranking-focused blog structure, featured snippet sections, FAQs, CTA blocks, and platform-ready formatting.`;
 
-  const sectionTemplates = [
+  const sectionTemplates: Array<(heading: string) => string> = [
     (heading: string) =>
       `${heading} helps readers understand the practical choices behind ${input.primaryKeyword} and why those choices affect ranking, trust, and action.`,
 
@@ -45,41 +50,61 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
       `This section gives depth to ${input.primaryKeyword} by translating general ideas into practical guidance, stronger examples, and clearer strategic relevance.`,
   ];
 
-  const sections = h2s.map((heading, index) => {
-    const paragraphA = sectionTemplates[index % sectionTemplates.length](heading);
+  const sections: BlogSection[] = h2s.map((heading: string, index: number) => ({
+    heading,
+    content: sectionTemplates[index % sectionTemplates.length](heading),
+  }));
 
-    const paragraphB = `For ${input.businessType}, this means shaping ${heading.toLowerCase()} around real reader expectations, clearer proof, and a stronger path from curiosity to action. When this section is handled well, it improves not just readability, but also relevance, trust, and conversion readiness.`;
+  const renderedSections =
+    sections.length > 0
+      ? sections
+          .map((section, index) => {
+            const supportingH3 =
+              index === 0
+                ? `How "${input.primaryKeyword}" fits the reader's search intent`
+                : index === 1
+                ? "What the reader actually needs from this page"
+                : index === 2
+                ? `How to adapt the content to ${safePlatform}`
+                : index === 3
+                ? "How this page supports business goals"
+                : "Differentiation opportunities competitors miss";
 
-    return {
-      heading,
-      content: `${paragraphA}\n\n${paragraphB}`,
-    };
-  });
+           const subsectionTemplates = [
+  () =>
+    `This subsection explains why "${input.primaryKeyword}" benefits from a structured, strategy-first approach and how that improves clarity and discoverability.`,
 
-  const renderedSections = sections
-    .map((section, index) => {
-      const supportingH3 =
-        index === 0
-          ? `How "${input.primaryKeyword}" fits the reader's search intent`
-          : index === 1
-          ? "What the reader actually needs from this page"
-          : index === 2
-          ? `How to adapt the content to ${safePlatform}`
-          : index === 3
-          ? "How this page supports business goals"
-          : "Differentiation opportunities competitors miss";
+  () =>
+    `Here, we connect "${input.primaryKeyword}" to real user intent, showing why structure and positioning directly impact ranking and conversion.`,
 
-      const subsection = `This subsection explains why "${input.primaryKeyword}" deserves a structured, strategy-first treatment and how that improves discoverability, clarity, and conversion potential.`;
+  () =>
+    `This part highlights how "${input.primaryKeyword}" should be treated to maximize visibility, usability, and decision-making clarity.`,
 
-      return `## ${section.heading}
+  () =>
+    `This subsection focuses on making "${input.primaryKeyword}" more actionable by aligning it with intent, structure, and real-world use.`,
+
+  () =>
+    `This section reinforces why "${input.primaryKeyword}" needs clear positioning and structured execution to perform well in search.`,
+];
+
+const subsection =
+  subsectionTemplates[index % subsectionTemplates.length]();
+            return `## ${section.heading}
 
 ${section.content}
 
 ### ${supportingH3}
 
 ${subsection}`;
-    })
-    .join("\n\n");
+          })
+          .join("\n\n")
+      : `## Core Strategy Overview
+
+${input.primaryKeyword} requires a content structure that aligns reader intent, SEO opportunity, and conversion flow. A strong blog should guide the reader clearly while also improving discoverability and publishing readiness.
+
+### How "${input.primaryKeyword}" fits the reader's search intent
+
+This subsection explains why "${input.primaryKeyword}" deserves a structured, strategy-first treatment and how that improves discoverability, clarity, and conversion potential.`;
 
   const markdown = `# ${input.title}
 

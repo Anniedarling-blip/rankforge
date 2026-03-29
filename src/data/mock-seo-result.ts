@@ -5,168 +5,267 @@ export const mockSeoResult: SeoAnalysisResult = {
     searchIntent: "Commercial",
     funnelStage: "MOFU",
     painPoint: "Users want to compare options before choosing a solution.",
-    contentAngle: "Comparison-first content with strong business context and actionable decision support.",
+    contentAngle:
+      "Comparison-first content with strong business context and actionable decision support.",
     buyerSignal: "Moderate-to-high intent to evaluate and shortlist tools.",
     intentConfidenceScore: 89,
     whyThisMatters:
-      "Commercial intent means the content should help users compare, evaluate, and move closer to a decision. Strong CTA placement and trust signals matter early."
+      "Commercial intent means the content should help users compare, evaluate, and move closer to a decision.",
   },
+
   keywordClusters: [
     {
       label: "Primary",
       keywords: ["best ai seo tools", "ai seo tools", "seo tools for ranking"],
       priority: "High Impact",
-      usageTip: "Use in H1, intro, and the main comparison H2 section."
+      usageTip: "Use in H1, intro, and the main comparison H2 section.",
     },
     {
       label: "Secondary",
-      keywords: ["content optimization tools", "seo automation software", "keyword strategy tools"],
+      keywords: [
+        "content optimization tools",
+        "seo automation software",
+        "keyword strategy tools",
+      ],
       priority: "Supporting",
-      usageTip: "Use in body sections and product-specific comparisons."
+      usageTip: "Use in body sections and product-specific comparisons.",
     },
     {
-      label: "Semantic",
-      keywords: ["search intent", "SERP analysis", "content brief", "ranking opportunity"],
-      priority: "Supporting",
-      usageTip: "Use naturally throughout supporting explanations."
-    },
-    {
-      label: "FAQs",
-      keywords: ["Which AI SEO tool is best?", "Can AI improve rankings?", "Are AI SEO tools worth it?"],
+      label: "Long-tail",
+      keywords: [
+        "best ai seo tools for startups",
+        "best ai seo tools for agencies",
+        "affordable ai seo tools",
+      ],
       priority: "Long-tail",
-      usageTip: "Use in FAQ sections and snippet-targeted blocks."
-    }
+      usageTip: "Use in FAQ sections and supporting subheadings.",
+    },
   ],
+
   serpGap: {
     commonPatterns: [
-      "Most results are listicles",
-      "Many pages are generic and beginner-focused",
-      "Comparison pages rarely explain decision logic"
+      "Top pages rely heavily on generic comparison posts.",
+      "Most ranking content highlights features but lacks decision support.",
+      "Many articles are broad and weak on use-case segmentation.",
     ],
     contentGaps: [
-      "Weak real-world examples",
-      "Poor business-type segmentation",
-      "Little guidance on CTA and conversion strategy"
+      "Weak CTA logic tailored to intent stage.",
+      "Limited explanation of ROI and business outcomes.",
+      "Not enough product-fit examples by audience type.",
     ],
     missedAngles: [
-      "India-specific examples",
-      "Business-size pricing interpretation",
-      "Decision-based tool recommendations"
+      "Tie the topic directly to buyer psychology.",
+      "Use stronger business framing and decision criteria.",
+      "Include platform-specific formatting recommendations.",
     ],
     outrankStrategy: [
-      "Add comparison logic, not just feature lists",
-      "Segment content by SaaS, Ecommerce, and Personal Brand",
-      "Add CTA markers at high-intent sections"
+      "Use stronger comparison structure and decision-focused sections.",
+      "Add clear CTA placement after evaluation-heavy sections.",
+      "Create more specific examples for different business sizes.",
     ],
     competitorWeaknessSimulation: [
-      "Competitors lack conversion-focused structure",
-      "Most pages do not explain why one tool beats another",
-      "SERP leaders underuse strategic trust builders"
+      "Competitor pages are likely broad, repetitive, and weak on conversion clarity.",
+      "Most optimize for impressions more than decision quality.",
+      "A sharper structure with stronger proof can outperform them.",
     ],
     whyThisMatters:
-      "This section identifies where top-ranking content is shallow. That gives you a concrete path to outperform rather than just imitate."
+      "SERP gap analysis helps identify what current ranking pages are missing so the content can be more useful and more competitive.",
   },
+
   strategy: {
-    articleType: "Comparison-led strategy article",
-    positioning: "A decision-support content asset for businesses choosing the right SEO growth path",
-    toneStrategy: "Confident, credible, consultative, and highly scannable",
-    ctaStrategy: "Use CTA after comparison block, after pricing logic, and after best-fit recommendation",
+    articleType: "Comparison article with product-led framing",
+    positioning:
+      "Position the product as the practical choice for teams comparing AI SEO tools.",
+    toneStrategy:
+      "Use a confident, practical tone that supports evaluation and decision-making.",
+    ctaStrategy:
+      "Use CTA blocks after comparison and fit-analysis sections to drive demos or trials.",
     trustBuilders: [
-      "Use-case segmentation",
-      "Decision framework",
-      "Comparison rationale",
-      "Clear recommendations"
+      "Feature comparison tables",
+      "Use-case based examples",
+      "Screenshots or workflow visuals",
+      "Proof points and ROI framing",
     ],
     outrankPlan: [
-      "Open with intent-aligned framing",
-      "Use structured comparison tables",
-      "Answer high-buying questions earlier",
-      "End with action-oriented recommendation"
+      "Use deeper decision-support content than generic comparison content.",
+      "Map sections directly to user evaluation needs.",
+      "Support the content with clearer structure and stronger CTA logic.",
     ],
     whyThisMatters:
-      "This is the business layer. It aligns ranking strategy with conversion behavior, which is what makes the tool feel useful and premium."
+      "The strategy layer converts keyword opportunity into a structure that can rank and convert.",
   },
+
   blueprint: {
     titles: [
-      "Best AI SEO Tools for Growth Teams in 2026",
-      "Top AI SEO Tools Compared: Features, Pricing, and Fit",
-      "How to Choose the Best AI SEO Tool for Your Business"
+      "Best AI SEO Tools: Top Picks for Smarter Organic Growth",
+      "How to Choose the Right AI SEO Tool for Your Team",
+      "AI SEO Tools Compared: Features, Use Cases, and Fit",
     ],
-    metaTitle: "Best AI SEO Tools in 2026: Compare Features, Pricing & Results",
+    metaTitle: "Best AI SEO Tools | Strategy-First SEO Comparison",
     metaDescription:
-      "Compare the best AI SEO tools by features, pricing, business fit, and ranking potential. Find the right option for your growth strategy.",
+      "Compare the best AI SEO tools with a strategy-first structure built for ranking, evaluation, and conversion.",
     featuredSnippet:
-      "The best AI SEO tools help with keyword research, content optimization, search intent mapping, and SERP analysis. The right choice depends on your business model, SEO maturity, and conversion goals.",
+      "The best AI SEO tools help teams improve rankings by combining keyword strategy, content optimization, and smarter workflow decisions.",
     outline: {
-      h1: "Best AI SEO Tools for Smarter Growth",
+      h1: "The Smart Guide to AI SEO Tools",
       h2: [
-        "What Makes an AI SEO Tool Valuable?",
-        "Best AI SEO Tools Compared",
-        "Best Choice by Business Type",
-        "Pricing Breakdown",
-        "How to Choose Based on Your Goal",
-        "FAQ"
+        "What AI SEO tools actually help with",
+        "How to compare tools by use case",
+        "Key features that matter most",
+        "Mistakes to avoid when choosing a platform",
+        "Best-fit recommendations by team type",
       ],
       h3: [
-        "Best for SaaS",
-        "Best for Ecommerce",
-        "Best for Personal Brand",
-        "CTA Opportunity: Choose Your Best Fit"
-      ]
+        "How this keyword maps to commercial intent",
+        "What buyers actually need from this page",
+        "How to adapt the content to the platform",
+        "How the structure supports conversion",
+        "Where competitors usually fall short",
+      ],
     },
     ctaPlacementMarkers: [
-      "After comparison table",
-      "After pricing section",
-      "After best-fit recommendation"
+      "After the main comparison section",
+      "After pricing or fit explanation",
+      "Bottom-of-page demo CTA",
     ],
     whyThisMatters:
-      "This makes the strategy executable. It converts a strategic idea into an actual publishable content blueprint."
+      "The blueprint ensures the final asset has the structure and CTA flow needed for ranking and conversion.",
   },
+
   scoring: {
     scores: [
       {
-        label: "SEO Score",
-        score: 88,
-        reason: "Strong structure, keyword alignment, and SERP differentiation."
+        label: "Intent Match",
+        score: 9,
+        reason: "The strategy closely matches commercial search behavior.",
       },
       {
-        label: "Snippet Readiness",
-        score: 80,
-        reason: "Good snippet framing with clear concise answer blocks."
+        label: "Differentiation Strength",
+        score: 8,
+        reason: "The structure is stronger than generic comparison content.",
       },
       {
-        label: "Semantic Coverage",
-        score: 85,
-        reason: "The keyword spread is broad and thematically relevant."
+        label: "Conversion Readiness",
+        score: 8,
+        reason: "CTA logic supports decision-making effectively.",
       },
       {
-        label: "Readability",
-        score: 82,
-        reason: "The hierarchy is clear and easy to scan."
+        label: "SERP Fit",
+        score: 9,
+        reason: "The structure aligns with real SERP expectations.",
       },
-      {
-        label: "CTA Strength",
-        score: 87,
-        reason: "CTA placement is strategically tied to high-intent moments."
-      },
-      {
-        label: "GEO Readiness",
-        score: 76,
-        reason: "Localized opportunity exists but can be expanded further."
-      },
-      {
-        label: "Internal Linking",
-        score: 78,
-        reason: "Good linking potential if related pages are mapped."
-      }
-    ]
+    ],
+    overallScore: 8.5,
+    percentileStrength: 72,
+    scoreSummary:
+      "This strategy outperforms most generic SEO content due to strong intent alignment and conversion logic.",
   },
+
   performance: {
     rankingPotential: "High",
     trafficPotential: "Medium",
     conversionPotential: "High",
     snippetProbability: "Medium",
     whyThisMatters:
-      "This helps the user estimate likely outcome and prioritize which strategy to publish or improve first."
-  }
+      "Performance projection shows this is a high-conversion opportunity keyword.",
+  },
+
+  serpSimulation: {
+    dominantContentType: "Comparison guides and blog posts",
+    competitionLevel: "Medium",
+    estimatedTopPageAverageScore: 7.4,
+    topRankingPatterns: [
+      "List-style comparisons",
+      "Decision-support sections",
+      "Feature breakdowns",
+    ],
+    rankingBarriers: [
+      "Crowded SERP",
+      "Weak differentiation",
+      "High content similarity",
+    ],
+    fastWinOpportunities: [
+      "Better CTA flow",
+      "Clear use-case segmentation",
+      "Stronger decision framing",
+    ],
+    simulationSummary:
+      "A sharper, decision-focused page can outperform generic competitors.",
+  },
+
+  competitorScoring: [
+    {
+      competitorLabel: "Generic Comparison Blog",
+      estimatedScore: 6.8,
+      strongestAdvantage: "Broad keyword coverage",
+      likelyWeakness: "Weak conversion logic",
+      outrankOpportunity: "Improve CTA and decision clarity",
+    },
+    {
+      competitorLabel: "SEO Software Vendor Page",
+      estimatedScore: 7.1,
+      strongestAdvantage: "Detailed product info",
+      likelyWeakness: "Limited educational depth",
+      outrankOpportunity: "Blend education + product fit",
+    },
+  ],
+
+  decisionTrace: [
+    {
+      title: "Keyword Input",
+      detail: 'Primary keyword: "best ai seo tools".',
+    },
+    {
+      title: "Intent Classification",
+      detail: "Detected commercial intent based on comparison phrasing.",
+    },
+    {
+      title: "Strategy Mapping",
+      detail: "Selected comparison-first structure.",
+    },
+    {
+      title: "Scoring Logic",
+      detail: "Scores based on intent, structure, and conversion alignment.",
+    },
+  ],
+
+  blogDraft: {
+    intro:
+      'To rank for "best ai seo tools", your content must guide users through comparison and decision-making.',
+    sections: [
+      {
+        heading: "What AI SEO tools actually help with",
+        content:
+          "They improve workflow speed, content quality, and ranking efficiency.",
+      },
+      {
+        heading: "How to compare tools",
+        content:
+          "Evaluate based on business type, scale, and SEO workflow needs.",
+      },
+      {
+        heading: "Key features",
+        content:
+          "Focus on automation, optimization, and strategic insights.",
+      },
+    ],
+    faq: [
+      "What are the best AI SEO tools?",
+      "How do they improve rankings?",
+      "Which features matter most?",
+    ],
+    ctaBlock:
+      "Start your free trial and improve your SEO workflow today.",
+  },
+
+  platformAdaptation: {
+    platform: "Blog",
+    formattingStyle: "Structured SEO article with strong headings",
+    ctaStyle: "Conversion-focused CTA",
+    contentAdjustments: [
+      "Use keyword-rich H2s",
+      "Add snippet-ready answers",
+      "Place CTAs after decision sections",
+    ],
+  },
 };
