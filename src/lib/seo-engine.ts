@@ -225,59 +225,82 @@ function stripInstructionalPrefix(keyword: string): string {
 function detectIntent(keyword: string): SearchIntent {
   const k = lower(keyword);
 
-  if (/^(how to|how|what is|what are|why|guide|tips|learn)\b/i.test(k)) {
+  const informationalPatterns = [
+    "how to",
+    "how ",
+    "what is",
+    "what are",
+    "why ",
+    "guide",
+    "tips",
+    "learn",
+    "tutorial",
+    "examples",
+    "checklist",
+  ];
+
+  const transactionalPatterns = [
+    "buy",
+    "price",
+    "pricing",
+    "coupon",
+    "discount",
+    "shop",
+    "order",
+    "subscribe",
+    "trial",
+    "demo",
+    "book",
+    "online",
+    "hire",
+    "download",
+    "get started",
+  ];
+
+  const commercialPatterns = [
+    "best",
+    "top",
+    "review",
+    "reviews",
+    "vs",
+    "compare",
+    "comparison",
+    "alternatives",
+    "tools",
+    "software",
+    "platform",
+    "builder",
+    "generator",
+  ];
+
+  const navigationalPatterns = [
+    "login",
+    "official",
+    "website",
+    "homepage",
+    "company",
+    "app",
+  ];
+
+  if (informationalPatterns.some((term) => k.includes(term))) {
     return "Informational";
   }
 
-  if (
-    includesAny(k, [
-      "buy",
-      "price",
-      "pricing",
-      "coupon",
-      "discount",
-      "shop",
-      "order",
-      "subscribe",
-      "trial",
-      "demo",
-      "book",
-      "online",
-      "hire",
-      "download",
-      "get started",
-    ])
-  ) {
+  if (transactionalPatterns.some((term) => k.includes(term))) {
     return "Transactional";
   }
 
-  if (
-    includesAny(k, [
-      "best",
-      "top",
-      "review",
-      "vs",
-      "compare",
-      "comparison",
-      "alternatives",
-      "tools",
-      "software",
-    ])
-  ) {
+  if (commercialPatterns.some((term) => k.includes(term))) {
     return "Commercial";
   }
 
-  if (
-    includesAny(k, [
-      "login",
-      "official",
-      "website",
-      "homepage",
-      "company",
-      "app",
-    ])
-  ) {
+  if (navigationalPatterns.some((term) => k.includes(term))) {
     return "Navigational";
+  }
+
+  // noun-style product queries like "ai resume builder"
+  if (k.split(/\s+/).length >= 2) {
+    return "Commercial";
   }
 
   return "Informational";
@@ -1120,7 +1143,10 @@ function buildPerformance(
         ? "High"
         : "Medium";
 
-    trafficPotential = intent === "Informational" ? "High" : "Medium";
+    trafficPotential =
+  intent === "Informational" || intent === "Commercial"
+    ? "High"
+    : "Medium";
 
     conversionPotential =
       intent === "Transactional"
@@ -1649,25 +1675,35 @@ export function generateSeoAnalysis(input: SeoInput): SeoAnalysisResult {
     serpSimulation
   );
 
-  const rawOverallScore =
-    (intentMatchScore +
-      differentiationScore +
-      conversionReadinessScore +
-      serpFitScore) /
-    4;
+const rawOverallScore =
+  (intentMatchScore +
+    differentiationScore +
+    conversionReadinessScore +
+    serpFitScore) /
+  4;
 
-  const overallScore = Number(rawOverallScore.toFixed(1));
-  const percentileStrength = calculateDynamicPercentile(
-    overallScore * 10,
-    competitorScoring,
-    serpSimulation,
-    notes,
-    platform
-  );
+let overallScore = Number(rawOverallScore.toFixed(1));
 
-  scoring.overallScore = overallScore;
-  scoring.percentileStrength = percentileStrength;
-  scoring.scoreSummary = `This strategy scores ${overallScore}/10 overall and is stronger than approximately ${percentileStrength}% of typical SEO pages targeting this keyword.`;
+// small quality boosts
+if (searchIntent === "Commercial") overallScore += 0.4;
+if (platform) overallScore += 0.2;
+if (notes) overallScore += 0.3;
+if (input.businessType === "SaaS") overallScore += 0.2;
+
+overallScore = Number(Math.min(9.6, overallScore).toFixed(1));
+
+let percentileStrength = Math.round(overallScore * 10 + 8);
+
+if (searchIntent === "Commercial") percentileStrength += 5;
+if (searchIntent === "Transactional") percentileStrength += 3;
+if (serpSimulation.competitionLevel === "High") percentileStrength -= 4;
+if (serpSimulation.competitionLevel === "Low") percentileStrength += 2;
+
+percentileStrength = Math.max(15, Math.min(96, percentileStrength));
+
+scoring.overallScore = overallScore;
+scoring.percentileStrength = percentileStrength;
+scoring.scoreSummary = `This strategy scores ${overallScore}/10 overall and is stronger than approximately ${percentileStrength}% of typical SEO pages targeting this keyword.`;
 
   const decisionTrace: DecisionTraceItem[] = [
     {
