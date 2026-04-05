@@ -246,10 +246,12 @@ Final Output (Platform-Ready)
 > RankForge is an **AI-powered growth engine**, not just a writing tool.
 
 It helps you:
-- Think strategically  
-- Execute faster  
-- Rank smarter  
-
+- analyzes intent
+- builds strategy
+-generates content
+- validates performance
+- adapts for platforms
+  
 ---
 
 ## 📜 License
