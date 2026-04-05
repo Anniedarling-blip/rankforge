@@ -97,4 +97,8 @@ export const snippetPatterns = [
   "Add concise FAQ responses for snippet eligibility.",
   "Keep at least one definition-style section in the content.",
   "Use H2 + short paragraph formatting for answer engines.",
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> 9cc8768 (Update rankforge local changes)

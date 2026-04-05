@@ -80,22 +80,36 @@ export function BlogOutputPanel({ blog }: { blog: GeneratedBlog }) {
       </CardHeader>
 
       <CardContent className="space-y-4">
+
+        {/* ✅ NEW BLOCK — Snippet Optimizer */}
+        <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+          <p className="text-sm font-medium text-white">Snippet Optimizer</p>
+          <p className="mt-2 text-sm text-slate-200">
+            This blog includes a featured snippet block and short-answer structure to
+            improve visibility in Google featured snippets and AI answer engines.
+          </p>
+        </div>
+
+        {/* Meta Title */}
         <div className="rounded-xl border border-slate-800 bg-slate-950 p-4">
           <p className="text-sm text-slate-400">Meta Title</p>
           <p className="mt-1 text-slate-200">{blog.metaTitle}</p>
         </div>
 
+        {/* Meta Description */}
         <div className="rounded-xl border border-slate-800 bg-slate-950 p-4">
           <p className="text-sm text-slate-400">Meta Description</p>
           <p className="mt-1 text-slate-200">{blog.metaDescription}</p>
         </div>
 
+        {/* Markdown Output */}
         <div className="rounded-xl border border-slate-800 bg-slate-950 p-4">
           <p className="text-sm text-slate-400">Blog Markdown Output</p>
           <pre className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-200">
             {blog.markdown}
           </pre>
         </div>
+
       </CardContent>
     </Card>
   );

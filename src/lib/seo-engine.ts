@@ -1292,37 +1292,46 @@ function buildBlogDraft(
   const goalText = normalize(input.goal) || "the next logical action";
   const platformText = normalize(input.platform) || "the target platform";
   const keywordText = normalize(input.keyword);
+  const businessTypeText = normalize(input.businessType) || "business";
 
-  const intro = `If you want to win for "${keywordText}", you need content that matches ${intent.searchIntent.toLowerCase()} intent, speaks to ${audienceText}, and guides them toward ${goalText}.`;
+  const intro = `To rank for "${keywordText}", this blog needs to match ${intent.searchIntent.toLowerCase()} intent, speak directly to ${audienceText}, and guide readers toward ${goalText}.`;
 
   const sectionTemplates = [
     (heading: string) =>
-      `${heading} should help the reader understand the topic more clearly, connect it to real use cases, and move toward the next logical action for ${input.businessType}.`,
+      `${heading} improves ranking potential by aligning the page with search intent, stronger structure, and clearer conversion flow around ${keywordText}. This also makes the content more useful for readers evaluating real solutions.`,
+
     (heading: string) =>
-      `A strong section on ${heading.toLowerCase()} should reduce confusion, clarify what matters most, and show how this topic applies in a practical ${input.businessType} context.`,
+      `Exploring ${heading.toLowerCase()} through real use cases and clearer positioning makes the content more actionable and helps readers evaluate options more effectively in a ${businessTypeText} context.`,
+
     (heading: string) =>
-      `${heading} should make the article feel more useful by connecting strategy, real-world application, and decision-making in a way that supports ${input.businessType} goals.`,
+      `${heading} strengthens the article by turning broad ideas into structured, practical guidance that improves SEO readiness, readability, and user engagement.`,
+
     (heading: string) =>
-      `This section should turn ${heading.toLowerCase()} into something concrete, relevant, and easier to act on for readers evaluating ${keywordText}.`,
+      `A high-performing section on ${heading.toLowerCase()} must connect strategy to outcomes, ensuring the content feels credible, complete, and conversion-focused.`,
+
+    (heading: string) =>
+      `${heading} adds depth by translating general concepts into practical insights, stronger examples, and clearer differentiation from competing pages.`,
   ];
 
   const sections = blueprint.outline.h2.map((heading, index) => ({
     heading,
-    content: sectionTemplates[index % sectionTemplates.length](heading),
+    content: `${sectionTemplates[index % sectionTemplates.length](heading)}
+
+This section should also support ${goalText} by reducing confusion, clarifying priorities, and giving the reader a stronger reason to move forward on ${platformText}.`,
   }));
 
   const faq = [
     `What is the best approach for ${keywordText}?`,
-    `How does ${input.businessType} change the strategy for ${keywordText}?`,
+    `How does ${businessTypeText} change the strategy for ${keywordText}?`,
     `What should I optimize first for ${platformText}?`,
   ];
 
   const ctaBlock =
     input.businessType === "SaaS"
-      ? "Start your free trial and see how this workflow improves results faster."
+      ? "Start your free trial and see how this workflow improves clarity, speed, and organic growth performance."
       : input.businessType === "Ecommerce"
-      ? "Explore the collection and choose the best-fit product for your needs."
-      : "Follow for more insights, subscribe to the newsletter, or book a strategy session.";
+      ? "Explore the collection and choose the option that best matches your needs and buying intent."
+      : "Follow for more insights, subscribe to the newsletter, or book a strategy session to take the next step.";
 
   return {
     intro,
@@ -1331,7 +1340,6 @@ function buildBlogDraft(
     ctaBlock,
   };
 }
-
 /* -------------------- main function -------------------- */
 
 export function generateSeoAnalysis(input: SeoInput): SeoAnalysisResult {

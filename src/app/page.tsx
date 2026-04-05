@@ -17,10 +17,16 @@ export default function Home() {
   const [result, setResult] = useState<SeoAnalysisResult | null>(null);
   const [part3Assets, setPart3Assets] = useState<Part3Assets | null>(null);
 
+  // ✅ ADDED
+  const [lastInput, setLastInput] = useState<SeoInput | null>(null);
+
  const handleGenerate = async (input: SeoInput) => {
   setIsLoading(true);
   setResult(null);
   setPart3Assets(null);
+
+  // ✅ ADDED
+  setLastInput(input);
 
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -31,6 +37,7 @@ export default function Home() {
   setPart3Assets(generatedPart3);
   setIsLoading(false);
 };
+
   return (
     <AppShell>
       <div className="mx-auto max-w-7xl">
@@ -41,7 +48,12 @@ export default function Home() {
         </div>
 
         {isLoading && <PipelineLoader />}
-        {result && <ResultsDashboard result={result} />}
+
+        {/* ✅ UPDATED */}
+        {result && lastInput && (
+          <ResultsDashboard result={result} input={lastInput} />
+        )}
+
         {part3Assets && <Part3Dashboard assets={part3Assets} />}
       </div>
     </AppShell>

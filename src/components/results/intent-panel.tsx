@@ -12,6 +12,20 @@ export function IntentPanel({ data }: { data: SeoAnalysisResult["intent"] }) {
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+        {/* ✅ ADDED Confidence Layer */}
+        <Card className="border-slate-800 bg-slate-900/70 text-white">
+          <CardContent className="p-5">
+            <p className="text-sm text-slate-400">Confidence Layer</p>
+            <p className="mt-2 text-lg font-semibold">
+              {data.intentConfidenceScore}%
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              This indicates how confidently the system classified the keyword intent.
+            </p>
+          </CardContent>
+        </Card>
+
         <Card className="border-slate-800 bg-slate-900/70 text-white">
           <CardContent className="p-5">
             <p className="text-sm text-slate-400">Search Intent</p>
