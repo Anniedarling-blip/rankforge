@@ -8,13 +8,15 @@ export function BlogValidationPanel({ blog }: { blog: GeneratedBlog }) {
     <Card
       id="validation-dashboard"
       className="scroll-mt-24 border-slate-800 bg-slate-900/70 text-white"
-    >
-      <CardHeader>
-        <CardTitle>Validation Dashboard</CardTitle>
-        <p className="text-sm text-slate-400">
-          10-metric SEO and publishing readiness check
-        </p>
-      </CardHeader>
+    ><CardHeader>
+  <CardTitle>Validation Dashboard</CardTitle>
+  <p className="text-sm text-slate-400">
+    10-metric SEO and publishing readiness check
+  </p>
+  <p className="mt-2 text-xs text-slate-400">
+    This blog is optimized for both search engines and AI answer engines.
+  </p>
+</CardHeader>
 
       <CardContent className="grid gap-4 md:grid-cols-2">
         {blog.validation.metrics.map((metric) => (

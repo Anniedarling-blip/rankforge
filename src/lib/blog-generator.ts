@@ -33,23 +33,33 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
   const metaTitle = `${input.title} | SEO-Optimized Guide`;
   const metaDescription = `Discover ${input.primaryKeyword} with a ranking-focused blog structure, featured snippet sections, FAQs, CTA blocks, and platform-ready formatting.`;
 
+  // ✅ IMPROVED (depth + variation + no repetition)
   const sectionTemplates: Array<(heading: string) => string> = [
-    (heading: string) =>
-      `${heading} helps readers understand the practical choices behind ${input.primaryKeyword} and why those choices affect ranking, trust, and action.`,
+  (heading: string) =>
+    `${heading} improves ranking potential by aligning the page with search intent, stronger structure, and clearer conversion flow around ${input.primaryKeyword}. This ensures the content is not only discoverable but also useful for readers evaluating solutions.
 
-    (heading: string) =>
-      `This section explores ${heading.toLowerCase()} through real use cases, clearer positioning, and the kinds of details readers actually need before moving forward.`,
+In practice, this means structuring the section with clear comparisons, real use cases, and decision-support insights so users can move forward confidently.`,
 
-    (heading: string) =>
-      `${heading} is where the article becomes useful, because it turns broad explanation into structured guidance that supports better decision-making.`,
+  (heading: string) =>
+    `Exploring ${heading.toLowerCase()} through real use cases and clearer positioning makes the content more actionable and helps readers evaluate options effectively.
 
-    (heading: string) =>
-      `A strong article cannot treat ${heading.toLowerCase()} as filler. It must connect the topic to outcomes, credibility, and publishing readiness.`,
+A well-developed section here should reduce confusion, highlight priorities, and guide the reader toward making a confident decision.`,
 
-    (heading: string) =>
-      `This section gives depth to ${input.primaryKeyword} by translating general ideas into practical guidance, stronger examples, and clearer strategic relevance.`,
-  ];
+  (heading: string) =>
+    `${heading} strengthens the article by turning broad ideas into structured, practical guidance that improves SEO readiness and engagement.
 
+This also increases dwell time and readability, which are key signals for both search engines and AI-driven answer systems.`,
+
+  (heading: string) =>
+    `A high-performing section on ${heading.toLowerCase()} must connect strategy to outcomes, ensuring the content feels credible and complete.
+
+Adding clarity, examples, and structured explanation here helps differentiate this page from generic competitor content.`,
+
+  (heading: string) =>
+    `${heading} adds depth by translating general concepts into practical insights and stronger differentiation.
+
+This makes the content more valuable, more memorable, and more likely to convert compared to surface-level articles.`,
+];
   const sections: BlogSection[] = h2s.map((heading: string, index: number) => ({
     heading,
     content: sectionTemplates[index % sectionTemplates.length](heading),
@@ -61,34 +71,35 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
           .map((section, index) => {
             const supportingH3 =
               index === 0
-                ? `How "${input.primaryKeyword}" fits the reader's search intent`
+                ? `How "${input.primaryKeyword}" aligns with user intent`
                 : index === 1
-                ? "What the reader actually needs from this page"
+                ? "What the reader actually needs to evaluate"
                 : index === 2
-                ? `How to adapt the content to ${safePlatform}`
+                ? `How to adapt this for ${safePlatform}`
                 : index === 3
-                ? "How this page supports business goals"
-                : "Differentiation opportunities competitors miss";
+                ? "How this supports business outcomes"
+                : "Opportunities competitors are missing";
 
-           const subsectionTemplates = [
-  () =>
-    `This subsection explains why "${input.primaryKeyword}" benefits from a structured, strategy-first approach and how that improves clarity and discoverability.`,
+            const subsectionTemplates = [
+              () =>
+                `This subsection explains why "${input.primaryKeyword}" benefits from a structured, intent-driven approach and how that improves clarity, ranking potential, and decision-making.`,
 
-  () =>
-    `Here, we connect "${input.primaryKeyword}" to real user intent, showing why structure and positioning directly impact ranking and conversion.`,
+              () =>
+                `Here, "${input.primaryKeyword}" is connected to real user intent, showing how better positioning improves both discoverability and conversion performance.`,
 
-  () =>
-    `This part highlights how "${input.primaryKeyword}" should be treated to maximize visibility, usability, and decision-making clarity.`,
+              () =>
+                `This part highlights how "${input.primaryKeyword}" should be structured to maximize visibility, usability, and strategic impact across the funnel.`,
 
-  () =>
-    `This subsection focuses on making "${input.primaryKeyword}" more actionable by aligning it with intent, structure, and real-world use.`,
+              () =>
+                `This subsection focuses on making "${input.primaryKeyword}" actionable by aligning it with user needs, business goals, and practical execution.`,
 
-  () =>
-    `This section reinforces why "${input.primaryKeyword}" needs clear positioning and structured execution to perform well in search.`,
-];
+              () =>
+                `This section reinforces how strong positioning and structure around "${input.primaryKeyword}" can outperform generic competitor content.`,
+            ];
 
-const subsection =
-  subsectionTemplates[index % subsectionTemplates.length]();
+            const subsection =
+              subsectionTemplates[index % subsectionTemplates.length]();
+
             return `## ${section.heading}
 
 ${section.content}
@@ -100,11 +111,11 @@ ${subsection}`;
           .join("\n\n")
       : `## Core Strategy Overview
 
-${input.primaryKeyword} requires a content structure that aligns reader intent, SEO opportunity, and conversion flow. A strong blog should guide the reader clearly while also improving discoverability and publishing readiness.
+${input.primaryKeyword} requires a content structure that aligns search intent, SEO opportunity, and conversion flow. A strong blog should guide the reader clearly while improving discoverability and engagement.
 
-### How "${input.primaryKeyword}" fits the reader's search intent
+### How "${input.primaryKeyword}" aligns with user intent
 
-This subsection explains why "${input.primaryKeyword}" deserves a structured, strategy-first treatment and how that improves discoverability, clarity, and conversion potential.`;
+This subsection explains why "${input.primaryKeyword}" needs a structured, strategy-first approach to improve clarity, ranking strength, and conversion outcomes.`;
 
   const markdown = `# ${input.title}
 
@@ -113,21 +124,21 @@ This subsection explains why "${input.primaryKeyword}" deserves a structured, st
 
 ## Featured Snippet
 
-${input.primaryKeyword} is most effective when the content combines clear search intent alignment, strong structure, comparison logic, and conversion-ready CTA placement.
+${input.primaryKeyword} performs best when the content combines clear intent alignment, strong structure, comparison logic, and conversion-focused CTA placement.
 
 ## Introduction
 
-If you want to rank for **${input.primaryKeyword}**, you need more than fast writing. You need structure, relevance, differentiation, and a content flow that helps the reader move from interest to action. This blog is designed for **${input.audience}** and written in a **${input.tone}** tone.
+If you want to rank for **${input.primaryKeyword}**, you need more than fast writing. You need structure, relevance, differentiation, and a content flow that moves the reader from awareness to action. This blog is designed for **${input.audience}** and written in a **${input.tone}** tone.
 
 ## Why This Topic Matters
 
-Most AI blog tools focus on generating words quickly. But ranking and conversion come from better strategic alignment: intent mapping, SERP opportunity, structured validation, and publishing adaptation. That is why this article is designed not just to explain the topic, but to help the reader understand how to act on it effectively.
+Most AI blog tools generate content quickly, but ranking and conversion require strategic alignment. This includes intent mapping, SERP gap identification, structured validation, and platform-ready formatting.
 
 ${renderedSections}
 
 ## Why Blogy Stands Out
 
-Blogy is positioned as a strategy-first blog automation solution. Instead of only generating text, it helps teams move from keyword to blueprint, validation, and publishing-ready outputs.
+Blogy is a strategy-first blog automation solution. Instead of generating content blindly, it builds structured, validated, and conversion-ready blog assets.
 
 ### Key Benefits
 - faster content production
@@ -156,27 +167,27 @@ Blogy is positioned as a strategy-first blog automation solution. Instead of onl
 ## FAQ
 
 ### What makes ${input.primaryKeyword} important?
-It combines ranking opportunity with high strategic value for organic growth.
+It combines ranking opportunity with strong strategic value for organic growth.
 
-### How is Blogy different from standard AI content writers?
-Blogy is built as a strategy-first organic growth engine, not just a text generator.
+### How is Blogy different from standard AI tools?
+Blogy operates as a strategy-first engine, not just a content generator.
 
-### Can this blog structure improve SEO performance?
-Yes. It improves structure, snippet-readiness, CTA flow, and keyword coverage.
+### Can this improve SEO performance?
+Yes. It improves structure, snippet-readiness, keyword coverage, and conversion flow.
 
-### Is this suitable for AI answer engines too?
-Yes. Featured snippets, direct answers, and strong structure improve compatibility.
+### Is this optimized for AI answer engines?
+Yes. Structured answers and snippet blocks improve AI compatibility.
 
 ### How should this be adapted for different platforms?
-The core content stays strong, but formatting, CTA style, and pacing should change by platform.
+Formatting, CTA style, and tone should adjust based on platform expectations.
 
 ## Conclusion
 
-To win with **${input.primaryKeyword}**, the goal is not only to publish faster. The goal is to publish content that is structured for ranking, designed for clarity, and optimized to convert.
+To win with **${input.primaryKeyword}**, the goal is not just speed. The goal is structured, optimized, and conversion-ready content.
 
 ## CTA
 
-Try **Blogy** to turn raw keywords into strategy, validated blog assets, and platform-ready publishing outputs.
+Try **Blogy** to transform raw keywords into strategy-driven, validated, and publish-ready blog assets.
 `;
 
   return {

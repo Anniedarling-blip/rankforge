@@ -17,21 +17,20 @@ export default function Home() {
   const [result, setResult] = useState<SeoAnalysisResult | null>(null);
   const [part3Assets, setPart3Assets] = useState<Part3Assets | null>(null);
 
-  const handleGenerate = async (input: SeoInput) => {
-    setIsLoading(true);
-    setResult(null);
-    setPart3Assets(null);
+ const handleGenerate = async (input: SeoInput) => {
+  setIsLoading(true);
+  setResult(null);
+  setPart3Assets(null);
 
-    await new Promise((resolve) => setTimeout(resolve, 4200));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    const generated = generateSeoAnalysis(input);
-    const generatedPart3 = generatePart3Assets(input, generated);
+  const generated = generateSeoAnalysis(input);
+  const generatedPart3 = generatePart3Assets(input, generated);
 
-    setResult(generated);
-    setPart3Assets(generatedPart3);
-    setIsLoading(false);
-  };
-
+  setResult(generated);
+  setPart3Assets(generatedPart3);
+  setIsLoading(false);
+};
   return (
     <AppShell>
       <div className="mx-auto max-w-7xl">
