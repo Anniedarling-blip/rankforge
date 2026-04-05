@@ -33,7 +33,10 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
   const metaTitle = `${input.title} | SEO-Optimized Guide`;
   const metaDescription = `Discover ${input.primaryKeyword} with a ranking-focused blog structure, featured snippet sections, FAQs, CTA blocks, and platform-ready formatting.`;
 
+<<<<<<< HEAD
   // ✅ IMPROVED (depth + variation + no repetition)
+=======
+>>>>>>> c211eb8 (Refine SEO engine: improved intent detection, dynamic scoring, blog depth enhancement, and performance realism)
   const sectionTemplates: Array<(heading: string) => string> = [
     (heading: string) =>
       `${heading} improves ranking potential by aligning the page with search intent, stronger structure, and clearer conversion flow around ${input.primaryKeyword}. This also strengthens clarity, usability, and decision confidence for the reader.`,
@@ -62,6 +65,7 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
           .map((section, index) => {
             const supportingH3 =
               index === 0
+<<<<<<< HEAD
                 ? `How "${input.primaryKeyword}" aligns with user intent`
                 : index === 1
                 ? "What the reader actually needs to evaluate"
@@ -91,6 +95,36 @@ export function buildBlogMarkdown(input: BlogTemplateInput): {
             const subsection =
               subsectionTemplates[index % subsectionTemplates.length]();
 
+=======
+                ? `How "${input.primaryKeyword}" fits the reader's search intent`
+                : index === 1
+                ? "What the reader actually needs from this page"
+                : index === 2
+                ? `How to adapt the content to ${safePlatform}`
+                : index === 3
+                ? "How this page supports business goals"
+                : "Differentiation opportunities competitors miss";
+
+           const subsectionTemplates = [
+  () =>
+    `This subsection explains why "${input.primaryKeyword}" benefits from a structured, strategy-first approach and how that improves clarity and discoverability.`,
+
+  () =>
+    `Here, we connect "${input.primaryKeyword}" to real user intent, showing why structure and positioning directly impact ranking and conversion.`,
+
+  () =>
+    `This part highlights how "${input.primaryKeyword}" should be treated to maximize visibility, usability, and decision-making clarity.`,
+
+  () =>
+    `This subsection focuses on making "${input.primaryKeyword}" more actionable by aligning it with intent, structure, and real-world use.`,
+
+  () =>
+    `This section reinforces why "${input.primaryKeyword}" needs clear positioning and structured execution to perform well in search.`,
+];
+
+const subsection =
+  subsectionTemplates[index % subsectionTemplates.length]();
+>>>>>>> c211eb8 (Refine SEO engine: improved intent detection, dynamic scoring, blog depth enhancement, and performance realism)
             return `## ${section.heading}
 
 ${section.content}
@@ -102,11 +136,19 @@ ${subsection}`;
           .join("\n\n")
       : `## Core Strategy Overview
 
+<<<<<<< HEAD
 ${input.primaryKeyword} requires a content structure that aligns search intent, SEO opportunity, and conversion flow. A strong blog should guide the reader clearly while improving discoverability and engagement.
 
 ### How "${input.primaryKeyword}" aligns with user intent
 
 This subsection explains why "${input.primaryKeyword}" needs a structured, strategy-first approach to improve clarity, ranking strength, and conversion outcomes.`;
+=======
+${input.primaryKeyword} requires a content structure that aligns reader intent, SEO opportunity, and conversion flow. A strong blog should guide the reader clearly while also improving discoverability and publishing readiness.
+
+### How "${input.primaryKeyword}" fits the reader's search intent
+
+This subsection explains why "${input.primaryKeyword}" deserves a structured, strategy-first treatment and how that improves discoverability, clarity, and conversion potential.`;
+>>>>>>> c211eb8 (Refine SEO engine: improved intent detection, dynamic scoring, blog depth enhancement, and performance realism)
 
   const markdown = `# ${input.title}
 
